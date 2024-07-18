@@ -2,7 +2,8 @@
 🏠 Online Housing Show
 📋 Overview
 
-Online Housing Show is a web application that allows property owners to create accounts and advertise their housings. Visitors can browse through the listings, and owners can manage their properties through an intuitive interface.
+        Online Housing Show is a web application that allows property owners to create accounts and advertise their housings. Visitors can browse through the listings, and owners can manage their properties 
+        through an intuitive interface.
 
 🌟 Features
 
