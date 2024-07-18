@@ -5,32 +5,32 @@ Online Housing Show is a web application that allows property owners to create a
 
 🌟 Features
 🔑 Owner Management
-        Create Account: Property owners can create an account by providing necessary details.
-        Login: Secure login using email and password.
-      🔒 JWT Authentication: Use of JWT for secure session management.
+        1. Create Account: Property owners can create an account by providing necessary details.
+        2. Login: Secure login using email and password.
+        3. 🔒 JWT Authentication: Use of JWT for secure session management.
       
 🏡 Property Listings
-      Add Housing: Owners can add new housing listings with details like name, address, number of floors, master rooms, single rooms, and amount.
-      Edit Housing: Owners can update the details of their existing housing listings.
-      ❌ Delete Housing: Owners can delete their housing listings.
+        1. Add Housing: Owners can add new housing listings with details like name, address, number of floors, master rooms, single rooms, and amount.
+        2. Edit Housing: Owners can update the details of their existing housing listings.
+        3.❌ Delete Housing: Owners can delete their housing listings.
       
 🔍 Search and Filter
-      Visitor Search: Visitors can search and filter housing listings based on housing name, number of floors, number of master rooms, number of single rooms, amount, and created date.
-      Owner Search: Owners can search and filter their own housing listings based on the same criteria.
+        1. Visitor Search: Visitors can search and filter housing listings based on housing name, number of floors, number of master rooms, number of single rooms, amount, and created date.
+        2. Owner Search: Owners can search and filter their own housing listings based on the same criteria.
       
 📄 Pagination
 Efficient Data Handling: Large sets of data are handled efficiently with pagination in both public and private listings.
 
 🛠 Technologies Used
-      Backend: Spring Boot
-      Database: PostgreSQL
-      Frontend: HTML, CSS, JavaScript
-      Security: JWT (JSON Web Token)
+        1. Backend: Spring Boot
+        2. Database: PostgreSQL
+        3. Frontend: HTML, CSS, JavaScript
+Security: JWT (JSON Web Token)
       
 🗂 Database Schema
 🧑‍💼 Owner Table
 sql
-Copy code
+
 CREATE TABLE Owner (
     Id SERIAL PRIMARY KEY,
     ownerUserName VARCHAR(255) NOT NULL,
@@ -43,7 +43,7 @@ CREATE TABLE Owner (
 
 🏠 Housing Table
 sql
-Copy code
+
 CREATE TABLE Housing (
     Id SERIAL PRIMARY KEY,
     housingName VARCHAR(255) NOT NULL,
@@ -60,29 +60,24 @@ CREATE TABLE Housing (
 
 📚 API Endpoints
 🔑 Owner API
-Create Owner: POST /api/owners
-
-Request Body (FormUrlEncoded): ownerUserName, ownerName, ownerEmail, password
-Owner Login: POST /api/owners/login
-
-Request Body (JSON): ownerEmail, password
-Response: JWT token
+        1. Create Owner: POST /api/owners
+        2. Request Body (FormUrlEncoded): ownerUserName, ownerName, ownerEmail, password
+        3. Owner Login: POST /api/owners/login
+        4. Request Body (JSON): ownerEmail, password
+        5. Response: JWT token
+        
 🏡 Housing API
-Create Housing: POST /api/housings
-
-Request Body (JSON): housingName, address, numberOfFloors, numberOfMasterRoom, numberOfSingleRoom, amount
-Header: Authorization: Bearer <token>
-Edit Housing: PUT /api/housings/{id}
-
-Request Body (JSON): housingName, address, numberOfFloors, numberOfMasterRoom, numberOfSingleRoom, amount
-Header: Authorization: Bearer <token>
-List Owner Housings: GET /api/housings/owner
-
-Header: Authorization: Bearer <token>
-Query Params: page, size, housingName, numberOfFloors, numberOfMasterRoom, numberOfSingleRoom, amount, createdDate
-List All Housings: GET /api/housings
-
-Query Params: page, size, housingName, numberOfFloors, numberOfMasterRoom, numberOfSingleRoom, amount, createdDate
+        1. Create Housing: POST /api/housings
+        2. Request Body (JSON): housingName, address, numberOfFloors, numberOfMasterRoom, numberOfSingleRoom, amount
+        3. Header: Authorization: Bearer <token>
+        4. Edit Housing: PUT /api/housings/{id}
+        5. Request Body (JSON): housingName, address, numberOfFloors, numberOfMasterRoom, numberOfSingleRoom, amount
+        6. Header: Authorization: Bearer <token>
+        7. List Owner Housings: GET /api/housings/owner
+        8. Header: Authorization: Bearer <token>
+        9. Query Params: page, size, housingName, numberOfFloors, numberOfMasterRoom, numberOfSingleRoom, amount, createdDate
+        10. List All Housings: GET /api/housings
+        11. Query Params: page, size, housingName, numberOfFloors, numberOfMasterRoom, numberOfSingleRoom, amount, createdDate
 🛠 Setup Instructions
 📋 Prerequisites
 Java 8 or higher
