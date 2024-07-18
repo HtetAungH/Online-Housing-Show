@@ -1,5 +1,6 @@
 # Online-Housing-Show
 🏠 Online Housing Show
+
 📋 Overview
 
         Online Housing Show is a web application that allows property owners to create accounts and advertise their housings. Visitors can browse through the listings, and owners can manage their properties 
@@ -26,7 +27,7 @@
       
 📄 Pagination
 
-Efficient Data Handling: Large sets of data are handled efficiently with pagination in both public and private listings.
+        Efficient Data Handling: Large sets of data are handled efficiently with pagination in both public and private listings.
 
 🛠 Technologies Used
 
@@ -38,34 +39,36 @@ Efficient Data Handling: Large sets of data are handled efficiently with paginat
 🗂 Database Schema
 
 🧑‍💼 Owner Table
+
 sql
 
-CREATE TABLE Owner (
-    Id SERIAL PRIMARY KEY,
-    ownerUserName VARCHAR(255) NOT NULL,
-    ownerName VARCHAR(255) NOT NULL,
-    ownerEmail VARCHAR(255) NOT NULL,
-    password VARCHAR(255) NOT NULL,
-    createdDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updatedDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
+        CREATE TABLE Owner (
+                Id SERIAL PRIMARY KEY,
+                ownerUserName VARCHAR(255) NOT NULL,
+                ownerName VARCHAR(255) NOT NULL,
+                ownerEmail VARCHAR(255) NOT NULL,
+                password VARCHAR(255) NOT NULL,
+                createdDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                updatedDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+         );
 
 🏠 Housing Table
+
 sql
 
-CREATE TABLE Housing (
-    Id SERIAL PRIMARY KEY,
-    housingName VARCHAR(255) NOT NULL,
-    address VARCHAR(255) NOT NULL,
-    numberOfFloors INT NOT NULL,
-    numberOfMasterRoom INT NOT NULL,
-    numberOfSingleRoom INT NOT NULL,
-    amount DECIMAL(10, 2) NOT NULL,
-    ownerId INT NOT NULL,
-    createdDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updatedDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (ownerId) REFERENCES Owner(Id) ON DELETE CASCADE
-);
+        CREATE TABLE Housing (
+            Id SERIAL PRIMARY KEY,
+            housingName VARCHAR(255) NOT NULL,
+            address VARCHAR(255) NOT NULL,
+            numberOfFloors INT NOT NULL,
+            numberOfMasterRoom INT NOT NULL,
+            numberOfSingleRoom INT NOT NULL,
+            amount DECIMAL(10, 2) NOT NULL,
+            ownerId INT NOT NULL,
+            createdDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+            updatedDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+            FOREIGN KEY (ownerId) REFERENCES Owner(Id) ON DELETE CASCADE
+        );
 
 📚 API Endpoints
 
@@ -92,67 +95,75 @@ CREATE TABLE Housing (
         11. Query Params: page, size, housingName, numberOfFloors, numberOfMasterRoom, numberOfSingleRoom, amount, createdDate
         
 🛠 Setup Instructions
+
 📋 Prerequisites
-Java 8 or higher
-Maven
-PostgreSQL
-Node.js and npm (for frontend development)
-⚙️ Backend Setup
-Clone the repository:
+
+        Java 8 or higher
+        Maven
+        PostgreSQL
+        Node.js and npm (for frontend development)
+        ⚙️ Backend Setup
+        Clone the repository:
 
 sh
-Copy code
-git clone https://github.com/yourusername/online-housing-show.git
-cd online-housing-show
-Configure the database in src/main/resources/application.properties:
+
+        git clone https://github.com/yourusername/online-housing-show.git
+        cd online-housing-show
+        Configure the database in src/main/resources/application.properties:
 
 properties
-Copy code
-spring.datasource.url=jdbc:postgresql://localhost:5432/yourdbname
-spring.datasource.username=yourusername
-spring.datasource.password=yourpassword
-spring.jpa.hibernate.ddl-auto=update
-spring.jpa.show-sql=true
-spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
 
-jwt.secret=your_secret_key
+        spring.datasource.url=jdbc:postgresql://localhost:5432/yourdbname
+        spring.datasource.username=yourusername
+        spring.datasource.password=yourpassword
+        spring.jpa.hibernate.ddl-auto=update
+        spring.jpa.show-sql=true
+        spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
+        jwt.secret=your_secret_key
+        
 Build and run the application:
 
 sh
-Copy code
-./mvnw clean install
-./mvnw spring-boot:run
-🌐 Frontend Setup
-Navigate to the frontend directory:
+
+        ./mvnw clean install
+        ./mvnw spring-boot:run
+        🌐 Frontend Setup
+        Navigate to the frontend directory:
 
 sh
-Copy code
-cd frontend
-Install dependencies:
+
+        Copy code
+        cd frontend
+        Install dependencies:
 
 sh
-Copy code
-npm install
-Start the development server:
+
+        npm install
+        Start the development server:
 
 sh
-Copy code
-npm start
-Open your browser and navigate to http://localhost:3000.
+
+        npm start
+        Open your browser and navigate to http://localhost:3000.
 
 🛠 Usage
-Owners: Sign up and log in to manage your housing listings.
-Visitors: Browse and search for housing listings without needing an account.
+
+        1. Owners: Sign up and log in to manage your housing listings.
+        2. Visitors: Browse and search for housing listings without needing an account.
+        
 🤝 Contributing
-Fork the repository.
-Create your feature branch: git checkout -b feature/my-new-feature
-Commit your changes: git commit -m 'Add some feature'
-Push to the branch: git push origin feature/my-new-feature
-Submit a pull request.
+
+        Fork the repository.
+        1. Create your feature branch: git checkout -b feature/my-new-feature
+        2. Commit your changes: git commit -m 'Add some feature'
+        3. Push to the branch: git push origin feature/my-new-feature
+        Submit a pull request.
+        
 📄 License
-This project is licensed under the MIT License.
+
+        This project is licensed under the MIT License.
 
 sh
-Copy code
-npm start
-Open your browser and navigate to http://localhost:3000.
+
+        npm start
+        Open your browser and navigate to http://localhost:3000.
